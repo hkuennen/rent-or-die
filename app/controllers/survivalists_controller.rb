@@ -1,4 +1,5 @@
 class SurvivalistsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show, :index]
   def index
     @survivalists = Survivalist.all
   end
@@ -9,6 +10,7 @@ class SurvivalistsController < ApplicationController
 
   def create
     @survivalist = Survivalist.new(survivalist_params)
+    @survivalist.user = current_user
     if @survivalist.save
       redirect_to survivalist_path(@survivalist)
     else
@@ -23,7 +25,7 @@ class SurvivalistsController < ApplicationController
   private
 
   def survivalist_params
-    params.require(:survivalist).permit(:name)
+    params.require(:survivalist).permit(:name, :category, :skills, :street, :postcode, :city, :photo)
   end
 
 end

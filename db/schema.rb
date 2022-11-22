@@ -32,6 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_145515) do
     t.string "street"
     t.string "postcode"
     t.string "city"
+    t.string "photo"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,8 +47,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_145515) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "city", null: false
-    t.string "name", null: false
+    t.string "city"
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
