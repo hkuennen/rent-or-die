@@ -1,0 +1,35 @@
+<div class="container">
+  <h2 class="text-center mt-5">Choose Your Survivalist!</h2>
+  <%# <div class="d-flex justify-content-center">
+    <div class="card-trip mt-2 col-4 m-2">
+      <img src="https://i.pinimg.com/originals/c7/c7/fb/c7c7fb072817f1c5a45743a69b52dc42.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2>Toecutter</h2>
+          <p>Headshots, Destruction, Haircuts</p>
+        </div>
+        <h2 class="card-trip-pricing">£222999.99/day</h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+    </div> %>
+  <%# </div> %>
+  <div class="my-5">
+    <div class="cards">
+      <% @survivalists.each do |survivalist| %>
+        <%= link_to survivalist_path(survivalist) do %>
+          <div class="card-trip">
+            <img src="https://i.pinimg.com/originals/c7/c7/fb/c7c7fb072817f1c5a45743a69b52dc42.jpg">
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= survivalist.name %></h2>
+                <p><%= survivalist.category %></p>
+              </div>
+              <h2 class="card-trip-pricing">£222999.99/day</h2>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
