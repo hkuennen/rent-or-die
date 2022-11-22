@@ -1,28 +1,49 @@
 require 'faker'
 
 puts "Clearing database..."
-User.destroy_all
+Meeting.destroy_all
 Survivalist.destroy_all
-Metting.destroy_all
+User.destroy_all
+
+
+usernames = ["Bearclaw Mohawk", "Big Rebecca", "Captain Walker", "Crow Fishers", "Dr. Dealgood", "Feral Kid", "Immortan Joe", "Jim Goose", "Lord Humungus", "Mad Max", "May Swaisey", "Rictus Erectus", "Sprog Rockatansky", "The Toadie", "Toast the Knowing"]
+
 
 puts "Creating users..."
-20.times do
-  User.create({email: Faker::Internet.email, name: "", password: Faker::Internet.password, city: Faker::Address.city})
+usernames.each do |username|
+  name = username.split(" ")
+  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: username, password: Faker::Internet.password, city: Faker::Address.city})
 end
 puts "Users created!"
 
+
 users = User.all
+categories = ["Engineer", "Medical", "Destroyer", "Cook", "Hunter"]
+
 
 puts "Creating survivalists..."
-12.times do
-  Survivalist.create({name: "", category: "", skills: "", street: Faker::Address.street_address, postcode: Faker::Address.zip_code, city: Faker::Address.city})
+users.each_with_index do |user, index|
+  if index < 3
+    Survivalist.create({name: user.name, category: categories[0], skills: "", street: Faker::Address.street_address, postcode: Faker::Address.zip_code, city: user.city, user_id: user.id})
+  elsif index >= 3 && index < 6
+    Survivalist.create({name: user.name, category: categories[1], skills: "", street: Faker::Address.street_address, postcode: Faker::Address.zip_code, city: user.city, user_id: user.id})
+  elsif index >= 6 && index < 9
+    Survivalist.create({name: user.name, category: categories[2], skills: "", street: Faker::Address.street_address, postcode: Faker::Address.zip_code, city: user.city, user_id: user.id})
+  elsif index >= 9 && index < 12
+    Survivalist.create({name: user.name, category: categories[3], skills: "", street: Faker::Address.street_address, postcode: Faker::Address.zip_code, city: user.city, user_id: user.id})
+  elsif index >= 12 && index < 15
+    Survivalist.create({name: user.name, category: categories[4], skills: "", street: Faker::Address.street_address, postcode: Faker::Address.zip_code, city: user.city, user_id: user.id})
+  end
 end
 puts "Survivalists created!"
 
+
 survivalists = Survivalist.all
 
-# puts "Creating meetings..."
-# Meeting.create({})
-# puts "Meetings created!"
+
+puts "Creating meetings..."
+Meeting.create({start_date: Date.today, end_date: Date.today + 1, user_id: users[0].id, survivalist_id: survivalists[0].id})
+puts "Meetings created!"
+
 
 puts "Database seeded!"
