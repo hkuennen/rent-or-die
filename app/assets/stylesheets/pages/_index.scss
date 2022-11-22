@@ -1,2 +1,31 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px ;
+}
+
+a {
+  text-decoration: none;
+  color: #545454;
+}
+
+a:hover {
+  color: #cc0000;
+}
+
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}

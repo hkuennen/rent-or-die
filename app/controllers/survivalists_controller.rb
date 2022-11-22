@@ -16,6 +16,10 @@ class SurvivalistsController < ApplicationController
     end
   end
 
+  def show
+    @survivalist = Survivalist.find(params[:id])
+  end
+
   private
 
   def survivalist_params
