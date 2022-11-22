@@ -1,0 +1,19 @@
+<div class="banner" style="background-image: url(https://www.futurezone.de/wp-content/uploads/sites/11/2022/09/darth-vader-star-wars.jpg?w=1200)">
+  <div class="container">
+  </div>
+</div>
+
+
+  <div class="new-survivalist">
+    <h1> <strong>Survivalist Profile</strong> !</h1>
+    <%= simple_form_for [@survivalist] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :category %>
+      <%= f.input :skills %>
+      <%= f.input :street %>
+      <%= f.input :city %>
+      <%= f.input :postcode %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit "Submit", class: "btn btn-success" %>
+    <% end %>
+  </div>

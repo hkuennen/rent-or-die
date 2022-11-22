@@ -10,7 +10,7 @@ class SurvivalistsController < ApplicationController
   def create
     @survivalist = Survivalist.new(survivalist_params)
     if @survivalist.save
-      redirect_to list_path(@survivalist)
+      redirect_to survivalist_path(@survivalist)
     else
       render :new, status: :unprocessable_entity
     end
@@ -18,7 +18,7 @@ class SurvivalistsController < ApplicationController
 
   private
 
-  def list_params
+  def survivalist_params
     params.require(:survivalist).permit(:name)
   end
 
