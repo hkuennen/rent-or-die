@@ -32,10 +32,10 @@ class MeetingsController < ApplicationController
   private
 
   def meeting_params
-    params.require(:meeting).permit(:user_id, :survivalist_id)
+    params.require(:meeting).permit(:user_id, :survivalist_id, :start_date, :end_date)
   end
 
-  def set_surivalist
+  def set_survivalist
     @survivalist = Survivalist.find(params[:survivalist_id])
   end
 
