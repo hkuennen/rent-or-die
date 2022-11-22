@@ -35,7 +35,7 @@ class MeetingsController < ApplicationController
     params.require(:meeting).permit(:user_id, :survivalist_id)
   end
 
-  def set_list
+  def set_surivalist
     @survivalist = Survivalist.find(params[:survivalist_id])
   end
 
