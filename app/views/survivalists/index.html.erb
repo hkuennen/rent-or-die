@@ -1,11 +1,13 @@
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/originals/e6/52/d3/e652d3692309b9edada209878296e220.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://scitechdaily.com/images/Bruning-City-Apocalypse-Concept.jpg);">
   <div class="container">
-    <h1>How to <strong>SURVIVE</strong> in the <strong>apocalypse</strong>!</h1>
-    <p>Want to live? Find your survivalist..</p>
+    <h1>Want to live? Find your <%= link_to "survivalist", new_survivalist_path(@survivalist), class: "now-button" %>.</h1>
+    <div class ="search-control form-group">
+      <%= form_tag survivalists_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "It's okay.. everyone needs help sometimes. :)" %>
+      <%= submit_tag "Search", class: "btn btn-primary form" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
-<%# <div class="container">
-  <h1 class="text-center my-4">List Mainframe</h1>
-  <%= link_to "Insert List", new_survivalist_path, class: "btn btn-primary mb-3" %>
+<%= link_to "Add a new Survivalist?", new_survivalist_path(@survivalist), class: "btn btn-success text-white mb-2" %>
