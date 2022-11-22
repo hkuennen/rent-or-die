@@ -1,0 +1,17 @@
+<div class="banner" style="background-image: url(https://www.futurezone.de/wp-content/uploads/sites/11/2022/09/darth-vader-star-wars.jpg?w=1200)">
+  <div class="container">
+  </div>
+</div>
+    <%= link_to "Back to all Survivalists", survivalists_path, class: "btn btn-primary mb-2" %>
+
+
+<div class="container">
+  <h1>Meetings</h1>
+  <%= simple_form_for [@survivalist, @meeting] do |f| %>
+    <%= f.input :start_date, as: :date, html5: true %>
+    <%= f.input :end_date, as: :date, html5: true %>
+    <%= f.association :user %>
+    <%= f.button :submit %>
+  <% end %>
+
+</div>
