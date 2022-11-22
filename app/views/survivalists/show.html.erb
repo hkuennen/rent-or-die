@@ -1,13 +1,19 @@
 <div class="container">
-  <div class="card-trip mt-2 col-4 m-2">
-    <img src="<%= @survivalist.photo %>" />
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= @survivalist.name %></h2>
-        <p><%= @survivalist.category %></p>
+  <div class="row justify-content-center my-4">
+    <div class="col-12 col-lg-6">
+      <div class="card-trip">
+      <img src="<%= @survivalist.photo %>" />
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= @survivalist.name %></h2>
+          <p><%= @survivalist.category %></p>
+        </div>
+        <h2 class="card-trip-pricing">£222999.99/day</h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
       </div>
-      <h2 class="card-trip-pricing">£222999.99/day</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
+  </div>
+  <div class="my-4 text-center">
+    <p><%= link_to "Back to all survivalists", survivalists_path, class:"btn btn-primary" %></p>
   </div>
 </div>
