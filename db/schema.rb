@@ -32,6 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_145515) do
     t.string "street"
     t.string "postcode"
     t.string "city"
+    t.string "photo"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
