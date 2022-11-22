@@ -7,6 +7,7 @@ class CreateSurvivalists < ActiveRecord::Migration[7.0]
       t.string :street
       t.string :postcode
       t.string :city
+      t.string :photo
       t.references :user, null: false, foreign_key: true
 
       t.timestamps

@@ -19,13 +19,13 @@ class SurvivalistsController < ApplicationController
   end
 
   def show
-    @restaurant = Survivalist.find(params[:id])
+    @survivalist = Survivalist.find(params[:id])
   end
 
   private
 
   def survivalist_params
-    params.require(:survivalist).permit(:name, :category, :skills, :street, :postcode, :city)
+    params.require(:survivalist).permit(:name, :category, :skills, :street, :postcode, :city, :photo)
   end
 
 end
