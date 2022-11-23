@@ -1,13 +1,15 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://scitechdaily.com/images/Bruning-City-Apocalypse-Concept.jpg);">
-  <div class="container">
+<div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://scitechdaily.com/images/Bruning-City-Apocalypse-Concept.jpg);">
+    <div class="container">
     <h1>Want to live? Find your <%= link_to "survivalist", new_survivalist_path(@survivalist), class: "now-button" %>.</h1>
-    <div class ="search-control form-group">
-      <%= form_tag survivalists_path, method: :get do %>
-      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "It's okay.. everyone needs help sometimes. :)" %>
-      <%= submit_tag "Search", class: "btn btn-primary form" %>
-      <% end %>
-    </div>
-  </div>
-</div>
+    <h1>Are you a bad-ass Survivalist? Prove it and Register <%= link_to "HERE", new_survivalist_path(@survivalist), class: "now-button" %>.</h1>
 
-<%= link_to "Add a new Survivalist?", new_survivalist_path(@survivalist), class: "btn btn-success text-white mb-2" %>
+    </div>
+      <div class="container-shit">
+      <%= form_tag survivalists_path, method: :get do %>
+      <input type="text" placeholder="Don't Die...">
+      <div class="search"></div>
+      
+      <% end %>
+      </div>
+
+</div>

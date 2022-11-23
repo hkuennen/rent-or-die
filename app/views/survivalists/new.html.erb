@@ -1,10 +1,11 @@
-<div class="banner" style="background-image: url(https://www.futurezone.de/wp-content/uploads/sites/11/2022/09/darth-vader-star-wars.jpg?w=1200)">
-  <div class="container">
-  </div>
-</div>
+<div class="p-3 mb-2 bg-dark text-white">
+<div class="banner" style="background-image: url(https://9to5toys.com/wp-content/uploads/sites/5/2022/01/forever-skies-no-logo.jpg)">
 
+
+</div>
+ <div class="container">
   <div class="new-survivalist">
-    <h1> <strong>Survivalist Profile</strong> !</h1>
+    <h1> <strong>&darr; Register a Survivalist Profile! &darr;</strong> </h1>
     <%= simple_form_for(@survivalist) do |f| %>
       <%= f.input :name %>
       <%= f.input :category, as: :select, collection: ["Engineer", "Medical", "Destroyer", "Cook", "Hunter"] %>
@@ -17,3 +18,5 @@
       <%= f.submit "Submit", class: "btn btn-success" %>
     <% end %>
   </div>
+   </div>
+</div>
