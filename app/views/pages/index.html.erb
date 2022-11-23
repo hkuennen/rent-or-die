@@ -1,0 +1,19 @@
+
+<div class="p-3 mb-2 bg-dark text-white">
+<div class="gradient">
+<div class="container">
+  <h2 class="text-center mt-5">	&darr; My Survivalists! &darr;</h2>
+  <div class="my-5">
+    <div class="cards">
+        <% @meetings.each do |meeting| %>
+          <div class="card-trip">
+            <%# <%= cl_image_tag booking.island.photo %>
+            <div class="card-trip-infos">
+              <h4> <%= link_to meeting.survivalist.name, meeting_path(current_user.id, meeting.id) %> </h4>
+              <p>From <em><%= meeting.start_date %></em> to <em><%=meeting.end_date %></em></p>
+              <p>3400340 euros/day </p>
+            </div>
+          </div>
+          <% end %>
+    </div>
+    <div>

@@ -16,8 +16,8 @@
     <div class="col-12 col-lg-6">
       <h1 class="text-color">Reserve a Survivalist</h1>
       <%= simple_form_for [@survivalist, @meeting] do |f| %>
-        <%= f.input :start_date, as: :date, html5: true %>
-        <%= f.input :end_date, as: :date, html5: true %>
+        <%= f.input :start_date, as: :datetime, html5: true %>
+        <%= f.input :end_date, as: :datetime, html5: true %>
         <%= f.association :survivalist %>
         <div class="btn btn-danger">
           <%= f.button :submit %>
