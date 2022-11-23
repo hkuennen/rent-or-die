@@ -8,8 +8,8 @@
 <div class="container">
   <h1>Reserve a Survivalist</h1>
   <%= simple_form_for [@survivalist, @meeting] do |f| %>
-    <%= f.input :start_date, as: :date, html5: true %>
-    <%= f.input :end_date, as: :date, html5: true %>
+    <%= f.input :start_date, as: :datetime, html5: true %>
+    <%= f.input :end_date, as: :datetime, html5: true %>
     <%= f.association :survivalist %>
     <%= f.button :submit %>
   <% end %>
