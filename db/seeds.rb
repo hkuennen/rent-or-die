@@ -11,32 +11,33 @@ usernames = ["Bearclaw Mohawk", "Big Rebecca", "Captain Walker", "Crow Fishers",
 
 
 puts "Creating users..."
+  password = "123456"
   name = usernames[0].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[0], password: Faker::Internet.password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/3536235/pexels-photo-3536235.jpeg?auto=compress&cs=tinysrgb&w=1200"})
+  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[0], password: password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/3536235/pexels-photo-3536235.jpeg?auto=compress&cs=tinysrgb&w=1200"})
 
   name = usernames[1].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[1], password: Faker::Internet.password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/7706648/pexels-photo-7706648.jpeg?auto=compress&cs=tinysrgb&w=1200"})
+  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[1], password: password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/7706648/pexels-photo-7706648.jpeg?auto=compress&cs=tinysrgb&w=1200"})
 
   name = usernames[2].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[2], password: Faker::Internet.password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/1839564/pexels-photo-1839564.jpeg?auto=compress&cs=tinysrgb&w=1200"})
+  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[2], password: password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/1839564/pexels-photo-1839564.jpeg?auto=compress&cs=tinysrgb&w=1200"})
 
   name = usernames[3].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[3], password: Faker::Internet.password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/14426059/pexels-photo-14426059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"})
+  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[3], password: password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/14426059/pexels-photo-14426059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"})
 
   name = usernames[4].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[4], password: Faker::Internet.password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/5435433/pexels-photo-5435433.jpeg?auto=compress&cs=tinysrgb&w=1200"})
+  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[4], password: password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/5435433/pexels-photo-5435433.jpeg?auto=compress&cs=tinysrgb&w=1200"})
 
   name = usernames[5].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[5], password: Faker::Internet.password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/5448506/pexels-photo-5448506.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"})
+  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[5], password: password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/5448506/pexels-photo-5448506.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"})
 
   name = usernames[6].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[6], password: Faker::Internet.password, city: Faker::Address.city, photo: "https://de.web.img3.acsta.net/r_1280_720/pictures/15/05/05/11/59/147661.jpg"})
+  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[6], password: password, city: Faker::Address.city, photo: "https://de.web.img3.acsta.net/r_1280_720/pictures/15/05/05/11/59/147661.jpg"})
 
   name = usernames[7].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[7], password: Faker::Internet.password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/5553892/pexels-photo-5553892.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"})
+  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[7], password: password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/5553892/pexels-photo-5553892.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"})
 
   name = usernames[8].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[8], password: Faker::Internet.password, city: Faker::Address.city, photo: "https://images.unsplash.com/photo-1605595988901-3d06601c38ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1015&q=80"})
+  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[8], password: password, city: Faker::Address.city, photo: "https://images.unsplash.com/photo-1605595988901-3d06601c38ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1015&q=80"})
 
 
 puts "Users created!"
