@@ -7,7 +7,7 @@ Survivalist.destroy_all
 User.destroy_all
 
 
-usernames = ["Bearclaw Mohawk", "Big Rebecca", "Captain Walker", "Crow Fishers", "Dr. Dealgood", "Feral Kid", "Mad Max", "May Swaisey", "Jim Goose"]
+usernames = ["Bearclaw Mohawk", "Big Rebecca", "Captain Walker", "Crow Fishers", "Dr. Dealgood", "Feral Kid", "Mad Max", "May Swaisey", "Jim Goose", "AJ Sath"]
 
 
 puts "Creating users..."
@@ -39,6 +39,8 @@ puts "Creating users..."
   name = usernames[8].split(" ")
   User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[8], password: password, city: Faker::Address.city, photo: "https://images.unsplash.com/photo-1605595988901-3d06601c38ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1015&q=80"})
 
+  name = usernames[9].split(" ")
+  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[9], password: password, city: Faker::Address.city, photo: "https://kitt.lewagon.com/placeholder/users/ajsath"})
 
 puts "Users created!"
 
