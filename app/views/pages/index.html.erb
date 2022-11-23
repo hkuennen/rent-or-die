@@ -5,17 +5,18 @@
   <h1 class="text-center mt-5">	&darr; My Survivalists! &darr;</h2>
   <div class="my-5">
     <div class="cards">
-        <% @meetings.each do |meeting, survivalists| %>
+        <% @meetings.each do |meeting| %>
           <div class="card-trip">
           <img src="<%= meeting.survivalist.photo %>">
             <div class="card-trip-infos">
             <div>
             <h2><%= meeting.survivalist.name %></h2>
                 <p><%= meeting.survivalist.category %></p>
-                <p><%= meeting.survivalist.skills %></p>
+                <p>Skill: <%= meeting.survivalist.skills %></p>
                 </div>
-              <p>From <em><%= meeting.start_date %></em> to <em><%=meeting.end_date %></em></p>
-              <p>£222999.99/day<</p>
+              <p>From <span><em><%= meeting.start_date.strftime("%d.%m.%Y %H:%M") %></em></span>
+              <br />to <span><em><%= meeting.end_date.strftime("%d.%m.%Y %H:%M") %></em></p></span>
+              <p><strong>£222999.99/day</strong></p>
             </div>
           </div>
           <% end %>
