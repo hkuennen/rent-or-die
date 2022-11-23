@@ -1,8 +1,17 @@
 .banner {
   background-size: cover;
   background-position: center;
+  height: 80vh;
   padding: 150px 0;
 }
+
+.banner-home {
+  background-size: cover;
+  background-position: relative;
+  height: 100vh;
+  padding: 150px 0;
+}
+
 
 .banner h1 {
   margin: 0;
