@@ -3,6 +3,14 @@ class PagesController < ApplicationController
   def home
   end
 
-  def dashboard
+  def index
+    @meetings = Meeting.all
+    @survivalists = Survivalist.all
+  end
+
+  def show
+    @meetings = Meeting.find(params[:id])
+    @meetings.user_id = current_user.id
+    @survivalist = Survivalist.find(params[:id])
   end
 end
