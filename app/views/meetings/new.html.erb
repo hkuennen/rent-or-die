@@ -19,8 +19,8 @@
         <%= f.input :start_date, as: :datetime, html5: true %>
         <%= f.input :end_date, as: :datetime, html5: true %>
         <%= f.association :survivalist %>
-        <div class="btn btn-danger text-light">
-          <%= f.button :submit %>
+        <div class="btn btn-danger">
+          <%= f.button :submit, class:"text-light" %>
         </div>
       <% end %>
     </div>
