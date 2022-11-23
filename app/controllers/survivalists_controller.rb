@@ -25,7 +25,7 @@ class SurvivalistsController < ApplicationController
   private
 
   def survivalist_params
-    params.require(:survivalist).permit(:name, :category, :skills, :street, :postcode, :city, :photo)
+    params.require(:survivalist).permit(:name, :category, :skills, :street, :postcode, :city)
   end
 
 end
