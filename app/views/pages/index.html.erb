@@ -1,5 +1,5 @@
 
-<div class="p-3 mb-2 bg-dark text-black">
+<div class="p-3 mb-2 bg-dark text-light">
 <div class="gradient">
 <div class="container">
   <h1 class="text-center mt-5">	&darr; My Survivalists! &darr;</h2>
@@ -8,8 +8,7 @@
         <% @meetings.each do |meeting| %>
           <div class="card-trip">
           <img src="<%= meeting.survivalist.photo %>">
-            <div class="card-trip-infos">
-            <div>
+          <div class="card-trip-infos">
             <h2><%= meeting.survivalist.name %></h2>
                 <p><%= meeting.survivalist.category %></p>
                 <p>Skill: <%= meeting.survivalist.skills %></p>
@@ -19,7 +18,8 @@
               <p><strong>£222999.99/day</strong></p>
             </div>
           </div>
-          <% end %>
+        </div>
+        <% end %>
     </div>
   </div>
 </div>
