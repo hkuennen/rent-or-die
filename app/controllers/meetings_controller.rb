@@ -21,7 +21,7 @@ class MeetingsController < ApplicationController
     @meeting.user = @user
     @meeting.survivalist = @survivalist
     if @meeting.save
-      redirect_to survivalist_path(@meeting.survivalist), status: :see_other
+      redirect_to survivalist_meeting_path(@meeting.survivalist_id, @meeting.id), status: :see_other
     else
       render :new, status: :unprocessable_entity
     end
