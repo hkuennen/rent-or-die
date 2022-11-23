@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :meetings, only: [:new, :create, :show, :index]
   end
   resources :meetings, only: [:destroy]
-
+  resources :pages, only: [:index, :show]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
