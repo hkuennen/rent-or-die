@@ -1,20 +1,17 @@
 <div class="p-3 mb-2 text-white">
-  <div class="gradient">
-    <div class="container">
-      <h2 class="text-center mt-5">	&darr; Choose Your Survivalist! &darr;</h2>
-      <div class="my-5">
-        <div class="cards">
-          <% @survivalists.each do |survivalist| %>
-            <%= link_to survivalist_path(survivalist) do %>
-              <div class="card-trip">
-                <img src="<%= survivalist.user.photo %>">
-                <div class="card-trip-infos">
-                  <div>
-                    <h2><%= survivalist.name %></h2>
-                    <p><%= survivalist.category %></p>
-                  </div>
-                  <h2 class="card-trip-pricing">£222999.99/day</h2>
-                </div>
+<div class="gradient">
+<div class="container">
+  <h2 class="text-center mt-5">	&darr; Choose Your Survivalist! &darr;</h2>
+  <div class="my-5">
+    <div class="cards">
+      <% @survivalists.each do |survivalist| %>
+        <%= link_to survivalist_path(survivalist) do %>
+          <div class="card-trip">
+            <%= cl_image_tag survivalist.user.photo.key %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= survivalist.name %></h2>
+                <p><%= survivalist.category %></p>
               </div>
             <% end %>
           <% end %>

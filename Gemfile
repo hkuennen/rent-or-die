@@ -79,3 +79,5 @@ end
 gem "faker"
 gem "devise"
 gem "geocoder"
+gem "cloudinary"
+gem "pg_search"
