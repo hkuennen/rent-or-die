@@ -8,8 +8,8 @@ class MeetingsController < ApplicationController
   end
 
   def show
-    @meetings = Meeting.find(params[:id])
-    @meetings.user_id = current_user.id
+    authorize @meeting
+    @meeting.user_id = current_user.id
   end
 
   def new

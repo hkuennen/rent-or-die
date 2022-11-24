@@ -2,6 +2,7 @@
   <div class="gradient">
     <div class="container">
       <h1 class="text-center mt-5">	&darr; My Survivalists! &darr;</h2>
+      <% if @meetings.size > 0 %>
       <div class="cards">
         <% @meetings.each do |meeting| %>
           <div class="card-trip">
@@ -19,6 +20,9 @@
           </div>
         <% end %>
       </div>
+      <% else %>
+      <h5 class="text-light text-center mt-5"><em>No meetings ahead</em></h5>
+      <% end %>
     </div>
   </div>
 </div>
