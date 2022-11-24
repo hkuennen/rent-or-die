@@ -1,7 +1,12 @@
 class SurvivalistsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   def index
-    @survivalists = Survivalist.all
+    if params[:query].present?
+      sql_query = "category ILIKE :query OR city ILIKE :query OR postcode ILIKE :query"
+      @survivalists = Survivalist.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @survivalists = Survivalist.all
+    end
   end
 
   def new
