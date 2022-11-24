@@ -8,14 +8,18 @@
           <div class="card-trip">
             <%= cl_image_tag meeting.survivalist.user.photo.key %>
             <div class="card-trip-infos">
-              <h2><%= meeting.survivalist.name %></h2>
-              <p><%= meeting.survivalist.category %></p>
+              <h2><%= meeting.survivalist.user.name %></h2>
+              <p>Category: <%= meeting.survivalist.category %></p>
               <p>Skill: <%= meeting.survivalist.skills %></p>
             </div>
-            <div>
-              <p>From <span><em><%= meeting.start_date.strftime("%d.%m.%Y %H:%M") %></em></span>
-              <br />to <span><em><%= meeting.end_date.strftime("%d.%m.%Y %H:%M") %></em></p></span>
-              <p><strong>£222999.99/day</strong></p>
+            <div class="card-trip-infos">
+                <p>From <span><em><%= meeting.start_date.strftime("%d.%m.%Y %H:%M") %></em></span>
+                <br />to <span><em><%= meeting.end_date.strftime("%d.%m.%Y %H:%M") %></em></p></span>
+                <p><strong>£222999.99/day</strong></p>
+                <i class="fa-solid fa-user"></i>
+                <% if policy(meeting).destroy? %>
+                  <%= link_to raw("<i class=\"fa-solid fa-trash-can\"></i>"), meeting_path(meeting), data: {turbo_method: :delete} %>
+                <% end %>
             </div>
           </div>
         <% end %>

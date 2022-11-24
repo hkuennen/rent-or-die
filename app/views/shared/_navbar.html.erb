@@ -18,7 +18,7 @@
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Dashboard", pages_path, class: "dropdown-item" %>
-              <%= link_to "Book Survivalist", new_survivalist_meeting_path(current_user.id), class: "dropdown-item" %>
+              <%= link_to "Book a Survivalist", survivalists_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
