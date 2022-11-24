@@ -7,7 +7,7 @@
       <% @survivalists.each do |survivalist| %>
         <%= link_to survivalist_path(survivalist) do %>
           <div class="card-trip">
-            <img src="<%= survivalist.user.photo %>">
+            <%= cl_image_tag survivalist.user.photo.key %>
             <div class="card-trip-infos">
               <div>
                 <h2><%= survivalist.name %></h2>

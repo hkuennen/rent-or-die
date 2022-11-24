@@ -78,4 +78,5 @@ end
 
 gem "faker"
 gem "devise"
+gem "cloudinary"
 gem "pg_search"
