@@ -77,7 +77,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_24_112045) do
     t.datetime "updated_at", null: false
     t.string "city"
     t.string "name"
-    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

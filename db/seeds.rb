@@ -7,41 +7,56 @@ Survivalist.destroy_all
 User.destroy_all
 
 
-usernames = ["Bearclaw Mohawk", "Big Rebecca", "Captain Walker", "Crow Fishers", "Dr. Dealgood", "Feral Kid", "Mad Max", "May Swaisey", "Jim Goose", "AJ Sath"]
+usernames = ["Bearclaw Mohawk", "Big Rebecca", "Captain Walker", "Crow Fishers", "Doctor Dealgood", "Feral Kid", "Mad Max", "May Swaisey", "Jim Goose"]
 
 # change city, street and postcode to some individually chosen addresses
 
 puts "Creating users..."
   password = "123456"
   name = usernames[0].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[0], password: password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/3536235/pexels-photo-3536235.jpeg?auto=compress&cs=tinysrgb&w=1200"})
+  mohawk = User.create!({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[0], password: password, city: "Berlin"})
 
+  mohawk.photo.attach(io: File.open("app/assets/images/mohawk.jpg"), filename: "mohawk.jpg", content_type: "image/jpg")
+  
   name = usernames[1].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[1], password: password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/7706648/pexels-photo-7706648.jpeg?auto=compress&cs=tinysrgb&w=1200"})
-
+  rebecca = User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[1], password: password, city: "Berlin"})
+  
+  rebecca.photo.attach(io: File.open("app/assets/images/rebecca.jpg"), filename: "rebecca.jpg", content_type: "image/jpg")
+  
   name = usernames[2].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[2], password: password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/1839564/pexels-photo-1839564.jpeg?auto=compress&cs=tinysrgb&w=1200"})
-
+  walker = User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[2], password: password, city: "Berlin"})
+  
+  walker.photo.attach(io: File.open("app/assets/images/walker.jpg"), filename: "walker.jpg", content_type: "image/jpg")
+  
   name = usernames[3].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[3], password: password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/14426059/pexels-photo-14426059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"})
+  fishers = User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[3], password: password, city: "Berlin"})
 
+  fishers.photo.attach(io: File.open("app/assets/images/fishers.jpg"), filename: "fishers.jpg", content_type: "image/jpg")
+  
   name = usernames[4].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[4], password: password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/5435433/pexels-photo-5435433.jpeg?auto=compress&cs=tinysrgb&w=1200"})
+  dealgood = User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[4], password: password, city: "Berlin"})
 
+  dealgood.photo.attach(io: File.open("app/assets/images/dealgood.jpg"), filename: "dealgood.jpg", content_type: "image/jpg")
+  
   name = usernames[5].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[5], password: password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/5448506/pexels-photo-5448506.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"})
+  kid = User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[5], password: password, city: "Berlin"})
 
+  kid.photo.attach(io: File.open("app/assets/images/kid.jpg"), filename: "kid.jpg", content_type: "image/jpg")
+  
   name = usernames[6].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[6], password: password, city: Faker::Address.city, photo: "https://de.web.img3.acsta.net/r_1280_720/pictures/15/05/05/11/59/147661.jpg"})
-
+  max = User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[6], password: password, city: "Berlin"})
+  
+  max.photo.attach(io: File.open("app/assets/images/max.jpg"), filename: "max.jpg", content_type: "image/jpg")
+  
   name = usernames[7].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[7], password: password, city: Faker::Address.city, photo: "https://images.pexels.com/photos/5553892/pexels-photo-5553892.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"})
+  swaisey = User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[7], password: password, city: "Berlin"})
 
+  swaisey.photo.attach(io: File.open("app/assets/images/swaisey.jpg"), filename: "swaisey.jpg", content_type: "image/jpg")
+  
   name = usernames[8].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[8], password: password, city: Faker::Address.city, photo: "https://images.unsplash.com/photo-1605595988901-3d06601c38ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1015&q=80"})
+  goose = User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[8], password: password, city: "Berlin"})
 
-  name = usernames[9].split(" ")
-  User.create({email: "#{name.first.downcase}.#{name.last.downcase}@rent-or-die.com", name: usernames[9], password: password, city: Faker::Address.city, photo: "https://kitt.lewagon.com/placeholder/users/ajsath"})
+  goose.photo.attach(io: File.open("app/assets/images/goose.jpg"), filename: "goose.jpg", content_type: "image/jpg")
 
 puts "Users created!"
 

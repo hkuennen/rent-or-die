@@ -2,7 +2,7 @@
   <div class="row justify-content-center my-4">
     <div class="col-12 col-lg-6">
       <div class="card-trip">
-      <img src="<%= @survivalist.user.photo %>" />
+      <%= cl_image_tag @survivalist.user.photo.key %>
       <div class="card-trip-infos">
         <div>
           <h2><%= @survivalist.name %></h2>
