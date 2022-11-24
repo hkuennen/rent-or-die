@@ -60,38 +60,36 @@ puts "Creating users..."
 
 puts "Users created!"
 
-
 users = User.all
 categories = ["Engineer", "Medical", "Destroyer", "Cook", "Hunter"]
 
-
 puts "Creating survivalists..."
-Survivalist.create({name: users[0].name, category: categories[2], skills: "Killing", street: "1 Paetschstraße", postcode: "12307", city: users[0].city, photo: users[0].photo, user_id: users[0].id})
+Survivalist.create({name: users[0].name, category: categories[2], skills: "Killing", address: Faker::Address.full_address, street: "1 Paetschstraße", postcode: "12307", city: users[0].city, photo: users[0].photo, user_id: users[0].id})
 
-Survivalist.create({name: users[1].name, category: categories[4], skills: "Finding food", street: "14A Schrockstraße", postcode: "14165", city: users[1].city, photo: users[1].photo, user_id: users[1].id})
+Survivalist.create({name: users[1].name, category: categories[4], skills: "Finding food", address: Faker::Address.full_address, street: "14A Schrockstraße", postcode: "14165", city: users[1].city, photo: users[1].photo, user_id: users[1].id})
 
-Survivalist.create({name: users[2].name, category: categories[3], skills: "Reduce hunger", street: "16A Altenescher Weg", postcode: "10407", city: users[2].city, photo: users[2].photo, user_id: users[2].id})
+Survivalist.create({name: users[2].name, category: categories[3], skills: "Reduce hunger", address: Faker::Address.full_address, street: "16A Altenescher Weg", postcode: "10407", city: users[2].city, photo: users[2].photo, user_id: users[2].id})
 
-Survivalist.create({name: users[3].name, category: categories[3], skills: "Producing food", street: "60 Anklamer Straße", postcode: "10115", city: users[3].city, photo: users[3].photo, user_id: users[3].id})
+Survivalist.create({name: users[3].name, category: categories[3], skills: "Producing food", address: Faker::Address.full_address, street: "60 Anklamer Straße", postcode: "10115", city: users[3].city, photo: users[3].photo, user_id: users[3].id})
 
-Survivalist.create({name: users[4].name, category: categories[1], skills: "Fast patching", street: "8 Waldsteg", postcode: "13158", city: users[4].city, photo: users[4].photo, user_id: users[4].id})
+Survivalist.create({name: users[4].name, category: categories[1], skills: "Fast patching", address: Faker::Address.full_address, street: "8 Waldsteg", postcode: "13158", city: users[4].city, photo: users[4].photo, user_id: users[4].id})
 
-Survivalist.create({name: users[5].name, category: categories[4], skills: "Headshots", street: "95 Waldschulallee", postcode: "14055", city: users[5].city, photo: users[5].photo, user_id: users[5].id})
+Survivalist.create({name: users[5].name, category: categories[4], skills: "Headshots", address: Faker::Address.full_address, street: "95 Waldschulallee", postcode: "14055", city: users[5].city, photo: users[5].photo, user_id: users[5].id})
 
-Survivalist.create({name: users[6].name, category: categories[0], skills: "Build shelter", street: "116 Riemeisterstraße", postcode: "14169", city: users[6].city, photo: users[6].photo, user_id: users[6].id})
+Survivalist.create({name: users[6].name, category: categories[0], skills: "Build shelter", address: Faker::Address.full_address, street: "116 Riemeisterstraße", postcode: "14169", city: users[6].city, photo: users[6].photo, user_id: users[6].id})
 
-Survivalist.create({name: users[7].name, category: categories[3], skills: "Cooking", street: "3 Wilmsstraße", postcode: "10961", city: users[7].city, photo: users[7].photo, user_id: users[7].id})
+Survivalist.create({name: users[7].name, category: categories[3], skills: "Cooking", address: Faker::Address.full_address, street: "3 Wilmsstraße", postcode: "10961", city: users[7].city, photo: users[7].photo, user_id: users[7].id})
 
-Survivalist.create({name: users[8].name, category: categories[1], skills: "Treat injuries", street: "84 Niederneuendorfer Allee", postcode: "13587", city: users[8].city, photo: users[8].photo, user_id: users[8].id})
+Survivalist.create({name: users[8].name, category: categories[1], skills: "Treat injuries", address: Faker::Address.full_address, street: "84 Niederneuendorfer Allee", postcode: "13587", city: users[8].city, photo: users[8].photo, user_id: users[8].id})
 puts "Survivalists created!"
 
+    Survivalist.create({name: users[8].name, category: categories[1], skills: "Treat injuries", address: Faker::Address.full_address, postcode: Faker::Address.zip_code, city: users[8].city, photo: users[8].photo, user_id: users[8].id})
+puts "Survivalists created!"
 
 survivalists = Survivalist.all
 
-
 puts "Creating meetings..."
-Meeting.create({start_date: DateTime.now, end_date: DateTime.now + 1, user_id: users[0].id, survivalist_id: survivalists[0].id})
+Meeting.create({ start_date: DateTime.now, end_date: DateTime.now + 1, user_id: users[0].id, survivalist_id: survivalists[0].id })
 puts "Meetings created!"
-
 
 puts "Database seeded!"
