@@ -6,10 +6,9 @@
     </div>
       <div class="container-shit">
       <%= form_tag survivalists_path, method: :get do %>
-      <input type="text" placeholder="Don't Die...">
+      <%= text_field_tag :query, params[:query], placeholder: "Don't die..."%>
       <div class="search"></div>
-
       <% end %>
       </div>
-
+ 
 </div>
