@@ -5,7 +5,7 @@
       <div class="cards">
         <% @meetings.each do |meeting| %>
           <div class="card-trip">
-            <img src="<%= meeting.survivalist.photo %>">
+            <%= cl_image_tag meeting.survivalist.user.photo.key %>
             <div class="card-trip-infos">
               <h2><%= meeting.survivalist.name %></h2>
               <p><%= meeting.survivalist.category %></p>

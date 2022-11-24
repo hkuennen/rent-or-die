@@ -11,7 +11,7 @@
     <p><%= @meetings.survivalist.city %></p>
 
     <div><br>
-      <img src=<%= @meetings.survivalist.photo %> alt="Your Specialist photo" width="300" class="booking-image">
+      <%= cl_image_tag @meetings.survivalist.user.photo.key, alt: "Your Specialist photo", width: "300", class: "booking-image" %>
     </div>
   </div>
 </div>
