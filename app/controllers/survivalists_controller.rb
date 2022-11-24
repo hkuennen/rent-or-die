@@ -8,6 +8,7 @@ class SurvivalistsController < ApplicationController
         lat: survivalist.latitude,
         lng: survivalist.longitude
       }
+    end
     if params[:query].present?
       sql_query = "category ILIKE :query OR city ILIKE :query OR postcode ILIKE :query"
       @survivalists = Survivalist.where(sql_query, query: "%#{params[:query]}%")
