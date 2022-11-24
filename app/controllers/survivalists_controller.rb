@@ -1,7 +1,19 @@
 class SurvivalistsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   def index
-    @survivalists = Survivalist.all
+    @survivalists_all = Survivalist.all
+    # The `geocoded` scope filters only flats with coordinates
+    @markers = @survivalists_all.geocoded.map do |survivalist|
+      {
+        lat: survivalist.latitude,
+        lng: survivalist.longitude
+      }
+    if params[:query].present?
+      sql_query = "category ILIKE :query OR city ILIKE :query OR postcode ILIKE :query"
+      @survivalists = Survivalist.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @survivalists = Survivalist.all
+    end
   end
 
   def new
@@ -27,5 +39,4 @@ class SurvivalistsController < ApplicationController
   def survivalist_params
     params.require(:survivalist).permit(:name, :category, :skills, :street, :postcode, :city)
   end
-
 end

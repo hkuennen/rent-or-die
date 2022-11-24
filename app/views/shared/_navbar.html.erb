@@ -15,7 +15,7 @@
           </li>
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
-            <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Dashboard", pages_path, class: "dropdown-item" %>
               <%#= link_to "Another action", "#", class: "dropdown-item" %>
@@ -23,8 +23,8 @@
             </div>
           </li>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <li class="nav-item py-1">
+            <%= link_to "Login", new_user_session_path, class: "nav-link text-light" %>
           </li>
         <% end %>
       </ul>
