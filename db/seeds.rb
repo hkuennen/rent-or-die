@@ -4,12 +4,15 @@ require 'date'
 puts "Clearing database..."
 Meeting.destroy_all
 Survivalist.destroy_all
+# Removing cloudinary images
+usr = User.all
+usr.each do |u|
+  u.photo.purge
+end
 User.destroy_all
 
 
 usernames = ["Bearclaw Mohawk", "Big Rebecca", "Captain Walker", "Crow Fishers", "Doctor Dealgood", "Feral Kid", "Mad Max", "May Swaisey", "Jim Goose"]
-
-# change city, street and postcode to some individually chosen addresses
 
 puts "Creating users..."
   password = "123456"
