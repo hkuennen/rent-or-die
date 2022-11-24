@@ -4,18 +4,6 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static values = { apiKey: String, markers: Array }
 
-  connect() {
-    mapboxgl.accessToken = this.apiKeyValue
-    this.map = new mapboxgl.Map({
-      container: this.element, // container ID
-      style: 'mapbox://styles/mapbox/streets-v12', // style URL
-      // center: [-74.5, 40], // starting position [lng, lat]
-      // zoom: 9, // starting zoom
-    });
-    this.#addMarkersToMap;
-    this.#fitMapToMarkers;
-  }
-
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
@@ -25,8 +13,20 @@ export default class extends Controller {
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .addTo(this.map)
+      .setLngLat([ marker.lng, marker.lat ])
+      .addTo(this.map)
     })
+  }
+
+  connect() {
+    mapboxgl.accessToken = this.apiKeyValue
+    this.map = new mapboxgl.Map({
+      container: this.element, // container ID
+      style: 'mapbox://styles/mapbox/streets-v12', // style URL
+      // center: [-74.5, 40], // starting position [lng, lat]
+      // zoom: 9, // starting zoom
+    });
+    this.#addMarkersToMap();
+    this.#fitMapToMarkers();
   }
 }
