@@ -6,7 +6,7 @@
 
       <div class="my-5">
 
-        <div class="cards">
+        <div class="cards mb-4">
           <% @survivalists.each do |survivalist| %>
             <%= link_to survivalist_path(survivalist) do %>
               <div class="card-trip">
@@ -21,8 +21,8 @@
             <% end %>
           <% end %>
         </div>
-
-        <div class="container container-map">
+        <hr>
+        <div class="container container-map mt-4">
           <div data-controller="map"
                data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
                data-map-markers-value="<%= @markers.to_json %>"
