@@ -78,3 +78,4 @@ end
 
 gem "faker"
 gem "devise"
+gem "pg_search"
