@@ -3,10 +3,26 @@
   background: #262626;
 }
 
+.navbar-lewagon-white {
+  background-color: white;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 50px;
+}
+
+.nav-items {
+  margin: 0px 30px;
+}
+
+.nav-items a {
+
+}
+
+.nav-item-spacing {
+  padding-right: 30px;
 }

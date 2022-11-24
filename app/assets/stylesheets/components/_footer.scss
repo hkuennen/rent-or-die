@@ -23,3 +23,17 @@
   color: rgb(255, 255, 255);
 }
 
+@include media-breakpoint-down(sm) {
+  .footer {
+    display: block;
+    text-align: center;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .footer-links {
+    margin: 10px 0 10px 0;
+    display: block;
+    text-align: center;
+  }
+}
