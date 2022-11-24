@@ -9,6 +9,7 @@ User.destroy_all
 
 usernames = ["Bearclaw Mohawk", "Big Rebecca", "Captain Walker", "Crow Fishers", "Dr. Dealgood", "Feral Kid", "Mad Max", "May Swaisey", "Jim Goose", "AJ Sath"]
 
+# change city, street and postcode to some individually chosen addresses
 
 puts "Creating users..."
   password = "123456"
