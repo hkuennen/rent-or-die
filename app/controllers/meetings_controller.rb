@@ -8,8 +8,8 @@ class MeetingsController < ApplicationController
   end
 
   def show
-    @meetings = Meeting.find(params[:id])
-    @meetings.user_id = current_user.id
+    @meeting = Meeting.find(params[:id])
+    @meeting.user_id = current_user.id
   end
 
   def new
@@ -29,7 +29,7 @@ class MeetingsController < ApplicationController
 
   def destroy
     @meeting.destroy
-    redirect_to survivalists_path, status: :see_other
+    redirect_to pages_path, status: :see_other
   end
 
   private
