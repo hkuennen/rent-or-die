@@ -1,25 +1,34 @@
 <div class="p-3 mb-2 text-white">
-<div class="gradient">
-<div class="container">
-  <h2 class="text-center mt-5">	&darr; Choose Your Survivalist! &darr;</h2>
-  <div class="my-5">
-    <div class="cards">
-      <% @survivalists.each do |survivalist| %>
-        <%= link_to survivalist_path(survivalist) do %>
-          <div class="card-trip">
-            <%= cl_image_tag survivalist.user.photo.key %>
-            <div class="card-trip-infos">
-              <div>
-                <h2><%= survivalist.name %></h2>
-                <p><%= survivalist.category %></p>
+  <div class="gradient">
+    <div class="container">
+
+    <h2 class="text-center mt-5">	&darr; Choose Your Survivalist! &darr;</h2>
+
+      <div class="my-5">
+
+        <div class="cards">
+          <% @survivalists.each do |survivalist| %>
+            <%= link_to survivalist_path(survivalist) do %>
+              <div class="card-trip">
+                <%= cl_image_tag survivalist.user.photo.key %>
+                <div class="card-trip-infos">
+                  <div>
+                    <h2><%= survivalist.name %></h2>
+                    <p><%= survivalist.category %></p>
+                  </div>
+                </div>
               </div>
             <% end %>
           <% end %>
         </div>
-      </div>
-    </div>
-    <div class="container">
-      <div data-controller="map" id='map' data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" data-map-markers-value="<%= @markers.to_json %>" style='width: 100%; height: 300px;'>
+
+        <div class="container container-map">
+          <div data-controller="map"
+               data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+               data-map-markers-value="<%= @markers.to_json %>"
+               style='width: 100%; height: 300px;'>
+          </div>
+        </div>
       </div>
     </div>
   </div>
