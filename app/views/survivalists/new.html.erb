@@ -3,18 +3,18 @@
 
 
 </div>
- <div class="container">
-  <div class="new-survivalist">
-    <h1> <strong>&darr; Register a Survivalist Profile! &darr;</strong> </h1>
-    <%= simple_form_for(@survivalist) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :category, as: :select, collection: ["Engineer", "Medical", "Destroyer", "Cook", "Hunter"] %>
-      <%= f.input :skills %>
-      <%= f.input :street %>
-      <%= f.input :city %>
-      <%= f.input :postcode %>
-      <%= f.submit "Submit", class: "btn btn-success" %>
-    <% end %>
+  <div class="container">
+    <div class="new-survivalist">
+      <h1> <strong>&darr; Register a Survivalist Profile! &darr;</strong> </h1>
+      <%= simple_form_for(@survivalist) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :category, as: :select, collection: ["Engineer", "Medical", "Destroyer", "Cook", "Hunter"] %>
+        <%= f.input :skills %>
+        <%= f.input :street %>
+        <%= f.input :city %>
+        <%= f.input :postcode %>
+        <%= f.submit "Submit", class: "btn btn-success" %>
+      <% end %>
+    </div>
   </div>
-   </div>
 </div>

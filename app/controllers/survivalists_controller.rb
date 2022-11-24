@@ -2,6 +2,13 @@ class SurvivalistsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   def index
     @survivalists = Survivalist.all
+    # The `geocoded` scope filters only flats with coordinates
+    @markers = @survivalists.geocoded.map do |survivalist|
+      {
+        lat: survivalist.latitude,
+        lng: survivalist.longitude
+      }
+    end
   end
 
   def new
@@ -27,5 +34,4 @@ class SurvivalistsController < ApplicationController
   def survivalist_params
     params.require(:survivalist).permit(:name, :category, :skills, :street, :postcode, :city)
   end
-
 end
