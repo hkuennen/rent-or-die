@@ -2,28 +2,30 @@
   <div class="gradient">
     <div class="container">
       <h1 class="text-center my-4 text-color">	&darr; My Survivalists! &darr;</h2>
+      <% if @meetings.size > 0 %>
       <div class="cards">
         <% @meetings.each do |meeting| %>
-          <div class="card-trip my-4">
+          <div class="card-trip">
             <%= cl_image_tag meeting.survivalist.user.photo.key %>
             <div class="card-trip-infos">
-              <h2><%= meeting.survivalist.name %></h2>
-              <p><%= meeting.survivalist.category %></p>
+              <h2><%= meeting.survivalist.user.name %></h2>
+              <p>Category: <%= meeting.survivalist.category %></p>
               <p>Skill: <%= meeting.survivalist.skills %></p>
             </div>
-            <div class="container d-flex justify-content-between">
-              <div>
-                <p class="ms-2">From <span><em><%= meeting.start_date.strftime("%d.%m.%Y %H:%M") %></em></span></p>
-                <p class="ms-2">to <span><em><%= meeting.end_date.strftime("%d.%m.%Y %H:%M") %></em></p></span></p>
-              </div>
-
-              <div>
-                <p class="me-2"><strong>£222999.99/day</strong></p>
-              </div>
+            <div class="card-trip-infos">
+                <p>From <span><em><%= meeting.start_date.strftime("%d.%m.%Y %H:%M") %></em></span>
+                <br />to <span><em><%= meeting.end_date.strftime("%d.%m.%Y %H:%M") %></em></p></span>
+                <p><strong>£222999.99/day</strong></p>
+                <% if policy(meeting).destroy? %>
+                  <%= link_to raw("<i class=\"fa-solid fa-trash-can\"></i>"), meeting_path(meeting), data: {turbo_method: :delete} %>
+                <% end %>
             </div>
           </div>
         <% end %>
       </div>
+      <% else %>
+      <h5 class="text-light text-center mt-5"><em>No meetings ahead</em></h5>
+      <% end %>
     </div>
     <p class="text-center mt-3"><%= link_to "Back to Homepage", root_path, class: "text-center" %></p>
   </div>
