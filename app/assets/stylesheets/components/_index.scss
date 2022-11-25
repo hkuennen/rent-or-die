@@ -12,10 +12,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 .mapboxgl-popup {
-  max-width: 200px;
+  max-width: 50px;
 }
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: #cc0000;
+  margin: 0;
+  padding: 5px 5px 0 5px;
+}
+
+.mapboxgl-popup-content > h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
 }
