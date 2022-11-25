@@ -6,7 +6,9 @@ class SurvivalistsController < ApplicationController
     @markers = @survivalists_all.geocoded.map do |survivalist|
       {
         lat: survivalist.latitude,
-        lng: survivalist.longitude
+        lng: survivalist.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {survivalist: survivalist}),
+        image_url: helpers.asset_url("pointer.png")
       }
     end
     if params[:query].present?
