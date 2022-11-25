@@ -49,3 +49,9 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+@include media-breakpoint-down(md) {
+  .lost {
+    font-size: 30px;
+  }
+}

@@ -1,14 +1,15 @@
 <div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://scitechdaily.com/images/Bruning-City-Apocalypse-Concept.jpg);">
-  <div class="container">
-  <h1>Want to live? Find your <%= link_to "SURVIVALIST", survivalists_path, class: "now-button" %>.</h1>
-  <h1>Are you a bad-ass Survivalist? Prove it and Register <%= link_to "HERE", new_survivalist_path(@survivalist), class: "now-button" %>.</h1>
-  </div>
+
+  <div class="container" id="glitch">
+    <h1>Want to live? Find your <%= link_to "SURVIVALIST", survivalists_path, class: "now-button" %>.</h1>
+    <h1>Are you a bad-ass Survivalist? Prove it and Register <%= link_to "HERE", new_survivalist_path(@survivalist), class: "now-button" %>.</h1>
   <div>
-    <div class="container-shit">
-      <%= form_tag survivalists_path, method: :get do %>
-      <%= text_field_tag :query, params[:query], placeholder: "Don't die..."%>
-      <div class="search"></div>
-      <% end %>
-    </div>
+
+  <div class="container-shit">
+    <%= form_tag survivalists_path, method: :get do %>
+    <%= text_field_tag :query, params[:query], placeholder: "Don't die..."%>
+    <div class="search"></div>
+    <% end %>
   </div>
+
 </div>
