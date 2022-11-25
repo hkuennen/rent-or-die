@@ -2,12 +2,21 @@ class SurvivalistsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   def index
     if params[:query].present?
-      sql_query = "(category ILIKE :query OR city ILIKE :query OR postcode ILIKE :query) AND user_id != :usr"
-      @survivalists = Survivalist.where(sql_query, query: "%#{params[:query]}%", usr: current_user.id.to_s)
+      if current_user
+        sql_query = "(category ILIKE :query OR city ILIKE :query OR postcode ILIKE :query) AND user_id != :usr"
+        @survivalists = Survivalist.where(sql_query, query: "%#{params[:query]}%", usr: current_user.id.to_s)
+      else
+        sql_query = "(category ILIKE :query OR city ILIKE :query OR postcode ILIKE :query)"
+        @survivalists = Survivalist.where(sql_query, query: "%#{params[:query]}%")
+      end
     else
-      @survivalists = Survivalist.all
-      sql_query = "user_id != :usr"
-      @survivalists = Survivalist.where(sql_query, usr: current_user.id.to_s)
+      if current_user
+        @survivalists = Survivalist.all
+        sql_query = "user_id != :usr"
+        @survivalists = Survivalist.where(sql_query, usr: current_user.id.to_s)
+      else
+        @survivalists = Survivalist.all
+      end
     end
     @survivalists_all = @survivalists
     @markers = @survivalists_all.geocoded.map do |survivalist|
