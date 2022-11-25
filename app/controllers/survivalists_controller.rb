@@ -2,7 +2,6 @@ class SurvivalistsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   def index
     @survivalists_all = Survivalist.all
-    # The `geocoded` scope filters only flats with coordinates
     @markers = @survivalists_all.geocoded.map do |survivalist|
       {
         lat: survivalist.latitude,
@@ -15,8 +14,14 @@ class SurvivalistsController < ApplicationController
     if params[:query].present?
       sql_query = "category ILIKE :query OR city ILIKE :query OR postcode ILIKE :query"
       @survivalists = Survivalist.where(sql_query, query: "%#{params[:query]}%")
+      @survivalists = @survivalists.select do |survivalist|
+        survivalist.user_id != current_user.id
+      end
     else
       @survivalists = Survivalist.all
+      @survivalists = @survivalists.select do |survivalist|
+        survivalist.user_id != current_user.id
+      end
     end
   end
 
