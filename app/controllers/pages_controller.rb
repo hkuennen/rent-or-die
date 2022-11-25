@@ -6,12 +6,13 @@ class PagesController < ApplicationController
   def index
     @meetings = Meeting.all
     @survivalists = Survivalist.all
+    @meetings = policy_scope(Meeting)
   end
 
   def show
-    @meetings = Meeting.find(params[:id])
-    @meetings.user_id = current_user.id
+    @meeting = Meeting.find(params[:id])
+    @meeting.user_id = current_user.id
     @survivalist = Survivalist.find(params[:id])
-    @meetings = policy_scope(Meeting)
+    @meeting = policy_scope(Meeting)
   end
 end

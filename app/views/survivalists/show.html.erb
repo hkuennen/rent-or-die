@@ -5,7 +5,7 @@
       <%= cl_image_tag @survivalist.user.photo.key %>
       <div class="card-trip-infos">
         <div>
-          <h2><%= @survivalist.name %></h2>
+          <h2><%= @survivalist.user.name %></h2>
           <p><strong>Category:</strong> <%= @survivalist.category %></p>
           <p><strong>Skill:</strong> <%= @survivalist.skills %></p>
         </div>
