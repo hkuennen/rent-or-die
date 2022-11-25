@@ -5,12 +5,18 @@
     <h3><strong>Booking Details</strong></h3>
     <hr>
     <strong>Start Date: <%= @meetings.start_date %></strong> | <strong>End Date: <%= @meetings.end_date %></strong>
-    <h4 class="mt-3"><strong><%= @meetings.survivalist.name %></strong></h4>
-    <p class="mt-3">Location: <%= @meetings.survivalist.street %></p>
-    <p><%= @meetings.survivalist.city %></p>
+    <strong>Start Date: <%= @meeting.start_date %></strong> | <strong>End Date: <%= @meeting.end_date %></strong>
 
-    <div>
-      <%= cl_image_tag @meetings.survivalist.user.photo.key, alt: "Your Specialist photo", class: "booking-image" %>
+    <h4><strong><%= @meetings.survivalist.name %></strong></h4>
+    <p>Location: <%= @meetings.survivalist.street %></p>
+    <p><%= @meetings.survivalist.city %></p>
+    <h4><strong><%= @meeting.survivalist.name %></strong></h4>
+    <p>Location: <%= @meeting.survivalist.street %></p>
+    <p><%= @meeting.survivalist.city %></p>
+
+    <div><br>
+      <%= cl_image_tag @meetings.survivalist.user.photo.key, alt: "Your Specialist photo", width: "300", class: "booking-image" %>
+      <%= cl_image_tag @meeting.survivalist.user.photo.key, alt: "Your Specialist photo", width: "300", class: "booking-image" %>
     </div>
     <br>
     <p><%= link_to "Check dashboard", pages_path %></p>
