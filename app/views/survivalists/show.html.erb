@@ -3,7 +3,7 @@
     <div class="col-12 col-lg-6">
       <div class="card-trip" id="big-img">
         <%= cl_image_tag @survivalist.user.photo.key %>
-        <h3 class="text-center mt-4"><%= @survivalist.name %></h3>
+        <h3 class="text-center mt-4"><%= @survivalist.user.name %></h3>
         <div class="card-trip-infos d-flex justify-content-evenly">
           <div>
             <p><strong>Category:</strong> <%= @survivalist.category %></p>
@@ -15,6 +15,7 @@
             <p><strong>Postcode:</strong> <%= @survivalist.postcode %></p>
           </div>
           <h2 class="card-trip-pricing">£222999.99/day</h2>
+
         </div>
       </div>
     </div>
