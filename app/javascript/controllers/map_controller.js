@@ -33,7 +33,7 @@ export default class extends Controller {
     mapboxgl.accessToken = this.apiKeyValue
     this.map = new mapboxgl.Map({
       container: this.element, // container ID
-      style: 'mapbox://styles/mapbox/streets-v12', // style URL
+      style: 'mapbox://styles/adityaluthfi24/clawel9fs007414nko6myrin8', // style URL
       // center: [-74.5, 40], // starting position [lng, lat]
       // zoom: 9, // starting zoom
     });
