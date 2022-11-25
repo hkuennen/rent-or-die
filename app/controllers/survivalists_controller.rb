@@ -6,7 +6,7 @@ class SurvivalistsController < ApplicationController
     @markers = @survivalists_all.geocoded.map do |survivalist|
       {
         lat: survivalist.latitude,
-        lng: survivalist.longitude
+        lng: survivalist.longitude,
       }
     end
     if params[:query].present?
