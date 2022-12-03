@@ -120,3 +120,4 @@ Meeting.create({ start_date: DateTime.now, end_date: DateTime.now + 1, user_id: 
 puts "Meetings created!"
 
 puts "Database seeded!"
+
