@@ -10,8 +10,8 @@
         <%= f.input :category, as: :select, collection: ["Engineer", "Medical", "Destroyer", "Cook", "Hunter"] %>
         <%= f.input :skills %>
         <%= f.input :street %>
-        <%= f.input :city %>
         <%= f.input :postcode %>
+        <%= f.input :city, input_html: { value: current_user.city } %>
         <%= f.submit "Submit", class: "btn btn-success" %>
       <% end %>
     </div>
