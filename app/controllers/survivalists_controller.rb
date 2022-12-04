@@ -37,6 +37,7 @@ class SurvivalistsController < ApplicationController
   def create
     @survivalist = Survivalist.new(survivalist_params)
     @survivalist.user = current_user
+    @survivalist.name = current_user.name
     @survivalist.address = "#{@survivalist.street}, #{@survivalist.postcode} #{@survivalist.city}"
     if @survivalist.save
       redirect_to survivalist_path(@survivalist)
