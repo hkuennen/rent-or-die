@@ -1,1 +1,1 @@
-https://rent-or-die.herokuapp.com
+https://rent-or-die.herokuapp.com/
