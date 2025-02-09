@@ -13,3 +13,7 @@ After logging in or signing up, you can browse the full list of available Surviv
 Once you select a Survivalist, you can choose a date and time to arrange a meeting. Pricing is determined by skill level and duration, allowing you to decide how long you want to "book" their services.
 
 Another key feature of the app is the ability to offer yourself as a specialist. If you have survival skills, you can list yourself as an expert, allowing others to book your services to help them navigate the post-apocalyptic world.
+
+## WebApp
+
+[![RentOrDie](app/assets/images/thumbnail.png)]()
