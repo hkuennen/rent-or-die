@@ -43,4 +43,3 @@
 .env*
 package-lock.json
 yarn.lock
-Gemfile.lock
